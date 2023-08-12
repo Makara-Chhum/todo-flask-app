@@ -1,0 +1,20 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <form method="POST" action="/submit">
+        <input type="text" name="task" placeholder="Enter a task">
+        <button type="submit">Add</button>
+    </form>
+    <h2>Current Todos:</h2>
+    <ul>
+        {% for todo in todos %}
+            <li>{{ todo[1] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
