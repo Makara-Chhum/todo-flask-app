@@ -10,7 +10,7 @@ services:
     networks:
       - public
       - private
-    restart: always
+    restart: on-failure
     depends_on:
       - mysql
   mysql:
