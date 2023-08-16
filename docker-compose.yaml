@@ -27,7 +27,6 @@ networks:
   public:
     driver: bridge
   private:
-# dummy commit
 
 
       
