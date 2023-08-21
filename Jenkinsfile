@@ -9,9 +9,10 @@ pipeline {
         
         stage ("Build Image") {
             steps {
-                sh 'docker build . -t kunalgohrani/todo-cicd:latest'
+                sh 'docker build . -t todo-cicd'
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'password', usernameVariable: 'username')]) {
                     sh "docker login -u ${env.username} -p ${env.password}"
+                    sh "docker tag todo-cicd ${env.username}/todo-cicd:latest"
                     sh "docker push ${env.username}/todo-cicd:latest"
                 }
             }
