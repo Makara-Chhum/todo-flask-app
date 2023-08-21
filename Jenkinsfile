@@ -12,7 +12,7 @@ pipeline {
                 sh 'docker build . -t kunalgohrani/todo-cicd:latest'
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'password', usernameVariable: 'username')]) {
                     sh "docker login -u ${env.username} -p ${env.password}"
-                    sh "docker push kunalgohrani/todo-cicd:latest"
+                    sh "docker push ${env.username}/todo-cicd:latest"
                 }
             }
         } 
