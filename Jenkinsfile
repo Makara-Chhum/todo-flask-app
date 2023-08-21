@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ("Clone code") {
             steps {
-                git branch: 'jenkinstry', changelog: false, url: 'https://github.com/kunal-gohrani/todo-flask-app.git'
+                git branch: 'main', changelog: false, url: 'https://github.com/kunal-gohrani/todo-flask-app.git'
             }
         }
         
