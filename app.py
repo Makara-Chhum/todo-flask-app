@@ -12,7 +12,7 @@ db_config = {
     'password': os.environ["MYSQL_PASSWORD"],
     'database': os.environ["MYSQL_DATABASE"]
 }
-
+print(db_config)
 conn = mysql.connector.connect(**db_config)
 cursor = conn.cursor()
 
@@ -35,6 +35,7 @@ def index():
 @app.route('/submit', methods=['POST'])
 def submit():
     task = request.form['task']
+    print(task)
     cursor.execute("INSERT INTO todos (task) VALUES (%s)", (task,))
     conn.commit() 
     return redirect("/")
