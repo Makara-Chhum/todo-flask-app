@@ -10,7 +10,7 @@ services:
       - api.env
     networks:
       - public
-#      - private
+#     - private
     restart: on-failure
     volumes:
       - ./:/app
